@@ -1,4 +1,7 @@
 # mealtesting
+Unit Testing Vue.JS Using Jest Framework
+<br/>
+For the best Mobile view, use chrome responsive with Pixel 2 Devices
 
 ## Project setup
 ```
