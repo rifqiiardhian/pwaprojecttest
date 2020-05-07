@@ -12,6 +12,7 @@
 import Links from './Links.vue';
 
 export default {
+  name: 'Reference',
   data() {
     return {
       link1: 'https://scotch.io/tutorials/build-a-progressive-web-application-with-nuxtjs',
@@ -26,9 +27,6 @@ export default {
 <style>
 .row-ref {
     padding: 50px;
-}
-.col-title {
-    margin-bottom: 30px;
 }
 .reference-title {
     font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
