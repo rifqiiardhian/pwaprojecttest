@@ -1,7 +1,7 @@
 <template>
 <b-row class="row-category">
     <div class="col-md-12 mt-5 mb-4">
-        <h1 class="text-secondary">Foods by Category</h1>
+        <h1 class="text-secondary">Your Favourite Foods</h1>
         <hr/>
         <titlee :strtitle="this.$route.params.name"/>
     </div>
@@ -13,9 +13,6 @@
             :images="result.picture"
             :title="result.name"/>
         </router-link>
-    </div>
-    <div class="col-md-12 mt-4" v-if="fav == null">
-      <h4 class="text-center text-secondary">No Favourites Food</h4>
     </div>
 </b-row>
 </template>

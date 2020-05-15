@@ -1,16 +1,17 @@
 <template>
   <div class="container-fluid">
-    <Favourites />
+    <favy />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Favourites from '@/components/Favourite.vue';
+import Favy from '@/components/Favourite.vue';
 
 export default {
+  name: 'Favourite',
   components: {
-    Favourites,
+    Favy,
   },
 };
 </script>

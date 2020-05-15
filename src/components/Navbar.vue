@@ -12,7 +12,7 @@
                 <b-nav-item href="/ingredient">Ingredient</b-nav-item>
                 <b-nav-item href="/search">Search Foods</b-nav-item>
                 <template v-if="user.loggedIn">
-                    <b-nav-item href="/favourite">Favourites</b-nav-item>
+                    <b-nav-item href="/favourites">Favourites</b-nav-item>
                     <b-nav-item @click.prevent="logout">Logout</b-nav-item>
                 </template>
                 <template v-else>
