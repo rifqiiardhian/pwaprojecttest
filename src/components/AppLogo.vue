@@ -1,6 +1,6 @@
 <template>
-    <b-row class="row-banner">
-    <b-col>
+    <div class="row row-banner">
+    <div class="col-lg-12">
         <div class="VueToNuxtLogo">
             <div class="Triangle Triangle--two"/>
             <div class="Triangle Triangle--one"/>
@@ -13,8 +13,8 @@
         <h2 class="subtitle">
             PWA Meal App by Rifqi Ardhian
         </h2>
-    </b-col>
-  </b-row>
+    </div>
+  </div>
 </template>
 <script>
 export default {

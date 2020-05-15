@@ -1,10 +1,10 @@
 <template>
-<b-row class="row-footer">
-    <b-col class="col-md-12 mt-5">
+<div class="row-footer">
+    <div class="col-md-12 mt-5">
         <p class="footer">&copy;2020 mealpwa by Rifqi Ardhian. Building with Nuxt.js</p>
         <p class="footer-sub">All Rights Reserved</p>
-    </b-col>
-</b-row>
+    </div>
+</div>
 </template>
 <script>
 export default {
@@ -12,6 +12,7 @@ export default {
 </script>
 <style>
 .row-footer {
+    width: 100%;
     margin: 0px;
     padding: 30px;
     text-align: center;

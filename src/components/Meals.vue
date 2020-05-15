@@ -1,29 +1,34 @@
 <template>
 <b-row class="row-meals">
     <b-col class="col-md-12 mt-5 mb-4">
-        <Title :strtitle="ttl"/>
+        <titlee :strtitle="ttl"/>
     </b-col>
     <b-col class="col-md-3" v-for="(data, index) in datafood" :key="index">
-        <Card :images="data.strMealThumb" :tagss="tgs" :title="data.strMeal"/>
+        <router-link
+        :to="{ name: 'Detail', params: { id: data.idMeal } }"
+        style="text-decoration: none">
+        <card :images="data.strMealThumb" :tagss="tgs" :title="data.strMeal"/>
+        </router-link>
     </b-col>
 </b-row>
 </template>
 <script>
 import axios from 'axios';
-import Title from './Title.vue';
-import Card from './Card.vue';
+import titlee from './Title.vue';
+import card from './Card.vue';
 
 export default {
+  name: 'Meals',
   data() {
     return {
-      ttl: 'Canadian Foods',
+      ttl: 'Latest Foods',
       tgs: 'Meals',
       datafood: [],
     };
   },
   components: {
-    Title,
-    Card,
+    titlee,
+    card,
   },
   async created() {
     const BASEURI = 'https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian';

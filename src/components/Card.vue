@@ -6,7 +6,7 @@
             img-top
             v-bind:tag="tagss"
             style="max-width: 20rem;"
-            class="mb-2"
+            class="card mb-2"
         >
             <h4 class="card-title">{{ title }}</h4>
             <p class="card-text">{{ text }}</p>
@@ -25,6 +25,12 @@ export default {
 };
 </script>
 <style scoped>
+.card {
+    transition: 0.3s ease;
+}
+.card:hover {
+    box-shadow: 0 4px 6px 0 rgb(17, 17, 17);
+}
 .card-title {
     font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
