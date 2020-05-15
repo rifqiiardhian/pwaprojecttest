@@ -3,8 +3,8 @@
     <div class="container-fluid">
       <app-logo />
       <Category />
-      <Meals />
       <Area />
+      <Meals />
       <refs />
     </div>
   </div>

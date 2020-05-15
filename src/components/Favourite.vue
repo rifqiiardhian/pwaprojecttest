@@ -5,47 +5,43 @@
         <hr/>
         <titlee :strtitle="this.$route.params.name"/>
     </div>
-    <div class="col-md-3" v-for="data in results" :key="data.idMeal">
+    <div class="col-md-3" v-for="result in fav" :key="result.id">
         <router-link
-        :to="{ name: 'Detail', params: { id: data.idMeal } }"
+        :to="{ name: 'Detail', params: { id: result.id } }"
         style="text-decoration: none">
         <card
-            :images="data.strMealThumb"
-            :title="data.strMeal"/>
+            :images="result.picture"
+            :title="result.name"/>
         </router-link>
     </div>
-    <div class="col-md-12 mt-4" v-if="results == null">
-      <h4 class="text-center text-secondary">No Foods</h4>
+    <div class="col-md-12 mt-4" v-if="fav == null">
+      <h4 class="text-center text-secondary">No Favourites Food</h4>
     </div>
 </b-row>
 </template>
 <script>
-import axios from 'axios';
 import titlee from './Title.vue';
 import card from './Card.vue';
 
+const STORAGE_KEY = 'FAVOURITESDATA';
+
 export default {
-  name: 'Category',
+  name: 'Favourites',
   data() {
     return {
-      ttl: 'Categories',
+      ttl: 'Favourites',
       tgs: 'Meals',
-      results: [],
+      result: '',
+      fav: [],
     };
   },
   components: {
     titlee,
     card,
   },
-  mounted() {
-    axios.get('https://www.themealdb.com/api/json/v1/1/filter.php?', {
-      params: {
-        i: this.$route.params.name,
-      },
-    })
-      .then((response) => {
-        this.results = response.data.meals;
-      });
+  async created() {
+    this.fav = JSON.parse(localStorage.getItem(STORAGE_KEY) || []);
+    console.log(this.fav);
   },
 };
 </script>

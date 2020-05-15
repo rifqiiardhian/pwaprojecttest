@@ -8,10 +8,10 @@
             <div class="Triangle Triangle--four"/>
         </div>
         <h1 class="title">
-            mealpwa
+            mealapp
         </h1>
         <h2 class="subtitle">
-            PWA Meal App by Rifqi Ardhian
+            API Meal App by Rifqi Ardhian
         </h2>
     </div>
   </div>

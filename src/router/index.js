@@ -25,9 +25,24 @@ const routes = [
     component: () => import('../views/Areafilter.vue'),
   },
   {
+    path: '/search',
+    name: 'Search',
+    component: () => import('../views/SearchMeals.vue'),
+  },
+  {
     path: '/meals/detail/:id',
     name: 'Detail',
     component: () => import('../views/MealsDetail.vue'),
+  },
+  {
+    path: '/ingredient',
+    name: 'Ingredient',
+    component: () => import('../views/Ingredient.vue'),
+  },
+  {
+    path: '/ingredient/filter/:name',
+    name: 'ingredientfilter',
+    component: () => import('../views/Ingredientfilter.vue'),
   },
   {
     path: '/login',
@@ -43,6 +58,11 @@ const routes = [
     path: '/dashboard',
     name: 'Dashboard',
     component: () => import('../views/Dashboard.vue'),
+  },
+  {
+    path: '/favourites',
+    name: 'Favourites',
+    component: () => import('../views/Favourite.vue'),
   },
 ];
 

@@ -1,7 +1,7 @@
 <template>
 <b-row class="row-category">
     <div class="col-md-12 mt-5 mb-4">
-        <h1 class="text-secondary">Foods by Category</h1>
+        <h1 class="text-secondary">Foods by Ingredient</h1>
         <hr/>
         <titlee :strtitle="this.$route.params.name"/>
     </div>
@@ -25,10 +25,10 @@ import titlee from './Title.vue';
 import card from './Card.vue';
 
 export default {
-  name: 'Category',
+  name: 'Area',
   data() {
     return {
-      ttl: 'Categories',
+      ttl: 'Meals by Area',
       tgs: 'Meals',
       results: [],
     };

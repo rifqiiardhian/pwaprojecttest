@@ -1,7 +1,7 @@
 <template>
 <div class="row-footer">
     <div class="col-md-12 mt-5">
-        <p class="footer">&copy;2020 mealpwa by Rifqi Ardhian. Building with Nuxt.js</p>
+        <p class="footer">&copy;2020 mealapp by Rifqi Ardhian. Building with Vue.js</p>
         <p class="footer-sub">All Rights Reserved</p>
     </div>
 </div>

@@ -60,7 +60,7 @@ export default {
         .auth()
         .signInWithEmailAndPassword(this.form.email, this.form.password)
         .then((data) => {
-          this.$router.replace({ name: 'Dashboard' });
+          this.$router.replace({ name: 'Home' });
           console.log(data);
         })
         .catch((err) => {

@@ -8,6 +8,11 @@
             <titlee :strtitle="data.strMeal"/>
             <cbadge :strvariant="variant1" :text="data.strCategory"/>
             <cbadge :strvariant="variant2" :text="data.strArea"/>
+            <div v-if="user.loggedIn">
+              <button
+              @click="addFav(data.idMeal,data.strMealThumb,data.strMeal,data.strCategory)"
+              class="btn btn-info mt-4">Add To Favourites</button>
+            </div>
             <p class="text-justify mt-4">
                 {{ data.strInstructions }}
             </p>
@@ -27,16 +32,26 @@
 </template>
 <script>
 import axios from 'axios';
+import { mapGetters } from 'vuex';
 import titlee from './Title.vue';
 import cbadge from './Badge.vue';
 
+const STORAGE_KEY = 'FAVOURITESDATA';
+
 export default {
   name: 'Meals Detail',
+  computed: {
+    // map `this.user` to `this.$store.getters.user`
+    ...mapGetters({
+      user: 'user',
+    }),
+  },
   data() {
     return {
       variant1: 'success',
       variant2: 'info',
       results: '',
+      fav: [],
     };
   },
   components: {
@@ -52,6 +67,19 @@ export default {
       .then((response) => {
         this.results = response.data.meals;
       });
+  },
+  methods: {
+    addFav(favId, favPict, favName, favCategory) {
+      this.fav.push({
+        id: favId, picture: favPict, name: favName, category: favCategory,
+      });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(this.fav));
+      this.$toast.success('Added to favorites !', {
+        theme: 'bubble',
+        position: 'top-center',
+        duration: '1500',
+      });
+    },
   },
 };
 </script>
